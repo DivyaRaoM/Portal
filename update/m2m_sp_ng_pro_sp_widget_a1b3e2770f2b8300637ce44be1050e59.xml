@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="m2m_sp_ng_pro_sp_widget">
+    <m2m_sp_ng_pro_sp_widget action="INSERT_OR_UPDATE">
+        <sp_angular_provider display_value="compileHtml">2bab45cadb60320036b8327e9d961925</sp_angular_provider>
+        <sp_widget display_value="ESM Cafe App Store Studio">6db3e2770f2b8300637ce44be1050e56</sp_widget>
+        <sys_class_name>m2m_sp_ng_pro_sp_widget</sys_class_name>
+        <sys_created_by>divya.m23</sys_created_by>
+        <sys_created_on>2018-01-16 05:26:05</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>a1b3e2770f2b8300637ce44be1050e59</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>compileHtml.ESM Cafe App Store Studio</sys_name>
+        <sys_package display_value="Portal Development" source="x_infte_portal_dev">0971a6f30f2b8300637ce44be1050e1f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Portal Development">0971a6f30f2b8300637ce44be1050e1f</sys_scope>
+        <sys_update_name>m2m_sp_ng_pro_sp_widget_a1b3e2770f2b8300637ce44be1050e59</sys_update_name>
+        <sys_updated_by>divya.m23</sys_updated_by>
+        <sys_updated_on>2018-01-16 05:26:05</sys_updated_on>
+    </m2m_sp_ng_pro_sp_widget>
+</record_update>

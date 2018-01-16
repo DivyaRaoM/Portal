@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function ($filter, $location) {
+	var c = this;
+	c.options.glyph = c.options.glyph || 'search';
+	c.options.title = c.options.title || c.data.searchMsg;
+
+	c.onSelect = function($item, $model, $label) {
+		if ($item.type == "sc")
+			$location.search({id: 'sc_cat_item', sys_id: $item.sys_id});
+		if ($item.type == "sc_content") {
+			if ($item.content_type == "kb")
+				$location.search({id: 'kb_article', sys_id: $item.kb_article});
+			else if ($item.content_type == "external")
+				window.open($item.url, '_blank');
+			else
+				$location.search({id: 'sc_cat_item', sys_id: $item.sys_id});
+		}
+		if ($item.type == "sc_guide")
+			$location.search({id: 'sc_cat_item_guide', sys_id: $item.sys_id});
+		if ($item.type == "kb")
+			$location.search({id: 'kb_article', sys_id: $item.sys_id});
+		if ($item.type == "qa")
+			$location.search({id: 'kb_social_qa_question', question_id: $item.sys_id});
+		if ($item.type == "rec")
+			$location.search({id: $item.page, sys_id: $item.sys_id, table: $item.table});
+	};
+
+	c.getResults = function(query) {
+		return c.server.get({q: query}).then(function(response) {
+			var a = $filter('orderBy')(response.data.results, '-score');
+			return $filter('limitTo')(a, c.data.limit);
+		});
+	}
+}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>h3-heading{
+  font-size:40px;
+  font-style:bold;
+  margin-left:-40px !important;
+}
+h1{
+
+  
+}.ribbon {
+ font-size: 16px !important;
+ width: 100px;
+  margin-right:20px;
+ position: relative;
+ background: #007CC3;
+ color: #fff;
+ text-align: center;
+  /* Adjust to suit */
+ /* Based on 24px vertical rhythm. 48px bottom margin - normally 24 but the ribbon 'graphics' take up 24px themselves so we double it. */
+}
+.ribbon:after {
+ 	right: 100%;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+	pointer-events: none;
+    margin-top:-20px
+
+
+}
+
+.ribbon:after {
+	border-color: rgba(136, 183, 213, 0);
+	border-right-color: #007CC3;
+	border-width: 25px;
+  margin-bottom:-20px
+	top: 50%;
+}
+.ribbon .ribbon-content:after {
+ content: "";
+ position: absolute;
+ display: block;
+ border-style: solid;
+ border-color: #999 transparent transparent transparent;
+bottom: -10px;
+}
+.ribbon .ribbon-content:after {
+ right: 0;
+ border-width: 10px 10px 0 0;
+}
+//////////
+.heading{
+  font-size:28px;
+  font-style:italic;
+  margin-top:10px;
+    margin-left:30px;
+  color:#007CC3;
+font-family:Myriad Pro;
+  letter-spacing:0px;
+    
+}
+#faq {
+  margin-top:-35px;
+ text-align:right;
+  margin-right:30px;
+  font-size:23px;
+  font-weight:bolder;
+  color:#fba100;
+  z-index:999999;
+ border: 2px 2px 2px #fba100;
+  border-radius:50%;
+  padding:5px;
+}
+.heading2{
+  
+  font-size:30px;
+ // text-align:center; 
+// margin-left:15px;
+  color:#fff;
+font-family:Myriad Pro;
+  letter-spacing:0px;
+  //b82601
+  //4ec5c1
+  //fc4a1a
+}
+
+.glyphicon{
+     				color : white;
+       
+				} 
+ 
+.blue{
+ color:#037584 
+  
+}
+		
+ .tag{
+  
+  //display:inline;
+   position:absolute;
+  font:30px Helvetica , sans-serif;
+  padding:0px;
+   padding-bottom: 0px;
+  letter-spacing:-4px;
+ // color:rgba(0,0,255,0.5);
+  font-style:bold;
+}
+ 
+ 
+.form-control::-webkit-input-placeholder {   font-style: italic; font-size:18px }
+.form-control:-moz-placeholder {   font-style: italic; font-size:18px }
+.form-control::-moz-placeholder {    font-style: italic; font-size:18px }
+.form-control:-ms-input-placeholder {    font-style: italic; font-size:18px}
+
+ul.dropdown-menu {
+    min-width: 100%;
+    border-radius: 0px 0px 4px 4px;
+    margin:0px;
+}
+
+ul.dropdown-menu a.ta-item {
+	line-height: 20px;
+}
+
+ul.dropdown-menu i.ta-icon, i.ta-img {
+    width: 20px;
+    height: 20px;
+    background-size: contain;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center center;
+    text-align: center;
+    line-height: 20px;
+    float:left;
+    margin-right: 8px;
+}
+
+input[name="q"] {
+float:right;
+    width: 80%;
+  height:35px;
+    box-sizing: border-box;
+    border: 2px solid #d3d3d3;
+    border-radius: 4px;
+ // margin-top:10px;
+  
+    font-size: 20px;
+    background-color: white;
+ 
+ 
+    
+      
+    background-repeat: no-repeat;
+//    padding: 6px 10px 6px 20px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+input[type=text]:focus {
+    width: 80%;
+  border-color: blue
+  
+  h1 {
+  font-family: "Avant Garde", Avantgarde, "Century Gothic", CenturyGothic, "AppleGothic", sans-serif;
+  font-size: 35px;
+ 
+  text-align: center;
+   text-transform: uppercase; }
+    
+    /****************************Publish button *****/
+    button a{
+      color : #ffffff;
+      font-size:14px;
+  		font-weight:bolder;
+      }
+    
+    
+    /**************************Publish button end ***************************/
+/*
+    
+      &lt;div class="col-md-3" style=" ; margin-top:10px; "  class="navbar-right"&gt;
+  &lt;a href="javascript:void(0)" class="dropdown-toggle" data-toggle="dropdown"&gt;
+            	&lt;span class="navbar-avatar"&gt;&lt;sn-avatar class="avatar-medium" primary="userID" /&gt;&lt;/span&gt;
+            	&lt;i class="visible-lg-inline blue"  &gt;{{::user.name}}&lt;/i&gt;
+          	&lt;/a&gt;
+        	&lt;a href="?id=logout"&gt;&lt;span class="glyphicon glyphicon-log-out blue" style="font-size:25px;margin-left:20px "&gt;&lt;/span&gt;&lt;/a&gt;
+  
+     &lt;/div&gt;
+    
+    */
+ </css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id>esm_cafe_header_studio</id>
+        <internal>false</internal>
+        <link/>
+        <name>ESM Cafe Header studio</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[data.connect_support_queue_id = $sp.getValue('sp_chat_queue');
+data.login_page = $sp.getValue('login_page');
+var menu = $sp.getValue("sp_rectangle_menu");
+data.menu = $sp.getWidgetFromInstance(menu);
+if (data.menu && data.menu.data) {
+	data.menu.data.replace = true;
+	// Hide login if menu already has link to login
+	data.hasLogin = false;
+	if (data.menu.data.menu.items) {
+		for(var i in data.menu.data.menu.items) {
+			var item = data.menu.data.menu.items[i];
+			if (item.type == 'page' && item.sp_page == data.login_page)
+				data.hasLogin = true;
+		}
+	}
+}
+
+/*************** To Check admin user**************/
+data.userRole = gs.getUser().hasRole('admin');
+console.log(data.userRole + "user");
+/************** Admin user check end**************/
+
+data.loginWidget = $sp.getWidgetFromInstance('login-modal');
+data.typeahead = $sp.getWidgetFromInstance('typeahead-search');
+(function() {
+	data.searchType = $sp.getParameter("t");
+	data.results = [];
+    data.searchMsg = gs.getMessage("Looking for an app?");
+	data.limit = options.limit || 15;
+	var textQuery = '123TEXTQUERY321';
+
+	if (!input)
+		return;
+
+	data.q = input.q;
+	getKnowledge();
+	if (gs.isLoggedIn())
+		getCatalogItems();
+	data.sqandaEnabled = gs.getProperty('glide.sp.socialqa.enabled', false) === 'true';
+	if (data.sqandaEnabled)
+		getQuestions();
+
+	// add in additional search tables from sp_search_groups
+	var portalGR = $sp.getPortalRecord();
+	var portalID = portalGR.getDisplayValue('sys_id');
+	var sg = GlideRecord('sp_search_group');
+	sg.addQuery('sp_portal',portalID);
+	sg.addQuery('active',true);
+	sg.orderBy('order');
+	sg.query();
+	while (sg.next())
+		addSearchTable(sg);
+
+	// typeahead search generates multiple "Your text query contained only
+	// common words..." msgs, we don't want them
+	gs.flushMessages();
+
+	function addSearchTable(sg) {
+		var table = sg.getValue('name');
+		var condition = sg.getValue('condition');
+		var gr = GlideRecord(table);
+		if (condition)
+			gr.addEncodedQuery(condition);
+
+		gr.addQuery(textQuery, data.q);
+		gr.query();
+		var searchTableCount = 0;
+		while (gr.next() && searchTableCount < data.limit) {
+			var rec = {};
+			rec.type = "rec";
+			rec.table = table;
+			rec.sys_id = gr.getDisplayValue('sys_id');
+			rec.page = sg.getDisplayValue('sp_page');
+			if (!rec.page)
+				rec.page = "form";
+			rec.label = gr.getDisplayValue();
+			rec.score = parseInt(gr.ir_query_score.getDisplayValue());
+			data.results.push(rec);
+			searchTableCount++;
+		}
+	}
+
+	function getKnowledge() {
+		var kb = new GlideRecord('kb_knowledge');
+		kb.addQuery('workflow_state', 'published');
+		kb.addQuery('valid_to', '>=', (new GlideDate()).getLocalDate().getValue());
+		kb.addQuery(textQuery, data.q);
+		kb.addQuery('kb_knowledge_base', $sp.getValue('kb_knowledge_base'));
+		kb.query();
+		var kbCount = 0;
+		while (kb.next() && kbCount < data.limit) {
+			if (!$sp.canReadRecord(kb))
+				continue;
+
+			var article = {};
+			article.type = "kb";
+			$sp.getRecordDisplayValues(article, kb, 'sys_id,number,short_description,published,text');
+			if (!article.text)
+				article.text = "";
+			article.text = $sp.stripHTML(article.text);
+			article.text = article.text.substring(0,200);
+			article.score = parseInt(kb.ir_query_score.getDisplayValue());
+			article.label = article.short_description;
+			data.results.push(article);
+			kbCount++;
+		}
+	}
+
+	function getCatalogItems() {
+		var sc = new GlideRecord('sc_cat_item');
+		sc.addQuery(textQuery, data.q);
+		sc.addQuery('active',true);
+		sc.addQuery('no_search', '!=', true);
+		sc.addQuery('visible_standalone', true);
+		sc.addQuery('sys_class_name', 'NOT IN', 'sc_cat_item_wizard');
+		sc.addQuery('sc_catalogs', $sp.getValue('sc_catalog'));
+		sc.query();
+		var catCount = 0;
+		while (sc.next() && catCount < data.limit) {
+			if (!$sp.canReadRecord(sc))
+				continue;
+
+			var item = {};
+			if (sc.getRecordClassName() == "sc_cat_item_guide")
+				item.type = "sc_guide";
+			else if (sc.getRecordClassName() == "sc_cat_item_content") {
+				var gr = new GlideRecord('sc_cat_item_content');
+				gr.get(sc.getUniqueValue());
+				$sp.getRecordValues(item, gr, 'url,content_type,kb_article');
+				item.type = "sc_content";
+			}
+			else
+				item.type = "sc";
+			
+			$sp.getRecordDisplayValues(item, sc, 'name,short_description,picture,price,sys_id');
+			item.score = parseInt(sc.ir_query_score.getDisplayValue());
+			item.label = item.name;
+			data.results.push(item);
+			catCount++;
+		}
+	}
+
+	function getQuestions() {
+		var questionGR = new GlideRecord("kb_social_qa_question");
+		questionGR.addActiveQuery();
+		questionGR.addQuery(textQuery, data.q);
+		questionGR.query();
+		var qCount = 0;
+		while (questionGR.next() && qCount < data.limit) {
+			if (!$sp.canReadRecord(questionGR))
+				continue;
+
+			var question = {};
+			question.type = "qa";
+			$sp.getRecordDisplayValues(question, questionGR, 'question,question_details,sys_created_on,sys_id');
+			question.text = (question.question_details) ? $sp.stripHTML(question.question_details) : "";
+			question.text = question.text.substring(0,200);
+			question.label = question.question;
+			question.score = 0;
+			data.results.push(question);
+			qCount++;
+		}
+	}
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>divya.m23</sys_created_by>
+        <sys_created_on>2018-01-16 05:29:11</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>7e64ae770f2b8300637ce44be1050ebc</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>ESM Cafe Header studio</sys_name>
+        <sys_package display_value="Portal Development" source="x_infte_portal_dev">0971a6f30f2b8300637ce44be1050e1f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Portal Development">0971a6f30f2b8300637ce44be1050e1f</sys_scope>
+        <sys_update_name>sp_widget_7e64ae770f2b8300637ce44be1050ebc</sys_update_name>
+        <sys_updated_by>divya.m23</sys_updated_by>
+        <sys_updated_on>2018-01-16 05:29:11</sys_updated_on>
+        <template><![CDATA[ 
+
+    <div class="row" style="background-color:white;">
+      <a href="/app_store/?id=appstore" class="col-md-2"style="margin-left :30px"><img style="margin-left:10px" src="newlogo3.png" height=50 width=350/></a>
+      
+<!--<div class="col-md-9" style=" padding:5px">
+ <form method="get" action="?">
+  <input type="hidden" name="id" value="search"/>
+  <input type="hidden" name="t" value="{{data.searchType}}"/>
+  <div class="input-group input-group-{{::c.options.size}}">
+    <input name="q" type="text" placeholder="{{::c.options.title}}"  ng-model="c.selectedState"
+           ng-model-options="{debounce: 250}" autocomplete="off"
+           uib-typeahead="item as item.label for item in c.getResults($viewValue)"
+           typeahead-focus-first="false"
+           typeahead-on-select="c.onSelect($item, $model, $label)"
+           typeahead-template-url="sp-typeahead.html" class="form-control input-typeahead">
+    <span class="input-group-btn">
+      <button name="search" type="submit" class="btn btn-{{::c.options.color}}">
+    	<i ng-if="::c.options.glyph" class="fa fa-{{::c.options.glyph}}"></i>
+      </button>
+    </span>
+  </div>
+</form></div> -->
+      
+    
+ 
+
+    
+        <div class="heading">AppStore
+          
+      </div>
+      
+        
+      <div class="pull-right">
+        
+      	<div ng-if="data.userRole" style="margin-top:-50px;color:#007CC3;margin-right:170px; width:150px;"class="ribbon" id="#faq">
+          <a href="?id=sc_cat_item&sys_id=6d3ea2050f930b84637ce44be1050e36" style="color:#fff">       
+   				<strong class="ribbon-content">Publish New App</strong></a>
+				</div>
+        <div style="margin-top:-50px;color:#007CC3;"class="ribbon pull-right" id="#faq">
+          <a href="/app_store/?id=faq" style="color:#fff">       
+   				<strong class="ribbon-content">FAQ</strong></a>
+				</div> 
+				<!--<button type="button" class="btn btn-primary" ng-if="data.userRole" style="margin-top:-100px;margin-right:40px"><a href="?id=sc_cat_item&sys_id=6d3ea2050f930b84637ce44be1050e36">Publish a new App</a></button>
+        <div style="margin-top:-50px;color:#007CC3;"class="ribbon pull-right" id="#faq">
+          <a href="/app_store/?id=faq" style="color:#fff">       
+   				<strong class="ribbon-content">FAQ</strong></a>
+				</div> -->
+    </div>  
+         </div>
+        
+      ]]></template>
+    </sp_widget>
+</record_update>

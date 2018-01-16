@@ -1,0 +1,1316 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_widget">
+    <sp_widget action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function($scope) {
+	  var c = this;
+ $(document).ready(function () {
+    $('.carousel').carousel({
+        interval: 4000
+    });
+
+    $('.carousel').carousel('cycle');
+})
+ 
+ function myFunction() {
+    alert("I am an alert box!");
+}
+	
+  
+}
+]]></client_script>
+        <controller_as>c</controller_as>
+        <css>html,body{
+ font-family: Myriad pro;
+  
+}
+.glyphicon .glyphicon-chevron-down{
+  
+ margin-right:-30px 
+  
+}
+
+h2 {
+   font-size:20px;padding:5px;margin-right:0px;
+  text-align:center; 
+ margin-left:15px;
+  color:#000;
+  background-color:#eee;font-weight:bold;
+  height:1px;
+  width:100%;
+font-family:Myriad Pro, Sans-serif;
+ // letter-spacing:-3px;
+   width: 100%; 
+   text-align: center; 
+   border-bottom: 1px solid #000; 
+   line-height: 0.1em;
+   margin: 10px 0 20px; 
+} 
+h2 span {
+   color:#f07432;padding:0 10px; 
+  background-color:#eee;font-weight:bold;
+  font-family:Myriad Pro, Sans-serif;
+}
+ 
+ 
+/********TILE SLIDE**********/ 
+.stay-in-place {
+    height: 100%;
+    width: 100%;
+    background: white;
+    position: absolute;
+}
+.move-in-to-place {
+    position: absolute;z-index:10;
+    right: -100%;
+    height : 100%;
+    width : 100%;
+    background-color:rgb(0,124,195); transition: 0.8s;
+  color:white;
+    opacity:1;
+}
+.box {
+    position: relative;
+    width:105%;
+    height:230px;
+    overflow:hidden;
+   margin-left:60px;margin-right:-80px;
+  border:0;border-bottom:0;border-left:0;
+  box-shadow: inset 0 -3.2px rgba(0, 0, 0, 0.2),inset 0px 0 rgba(0, 0, 0, 0.2);
+  outline:none;-webkit-outline:none;-o-outline:none;-moz-outline:none;
+}
+.box:hover .move-in-to-place {
+    right: 0;
+ //  transition: 1s;
+   transition-delay:1s;
+    -webkit-transition: all 0.8s, -webkit-transform 0.8s;
+    transition: all 0.8s, transform 0.8s;
+   
+    width:100%;
+    height:100%;
+    opacity:1;
+}
+ 
+//////////////////////////////////////
+
+.sidebar-nav{
+    height:auto;
+    list-style:none;
+    width: 80%; /******* MODIFIED ********/
+   // margin: 20px 0 0 0;
+}
+ 
+.sidebar-nav li {
+   // height: 25px;
+  //  margin: 0;
+  //  padding: 5px 0;
+  //  background-color: #666;
+ //   border: none;
+ //   text-align: center;
+    display: inline-block;
+    float: left;
+    clear:both;
+ //   width: 100px;  /******* MODIFIED ********/
+}
+/*
+ .sidebar-nav li:hover{
+  cursor:pointer; cursor:hand;
+   background-color:#ff383f;
+   
+ }*/
+.sidebar-nav li a {
+    font-family:Myriad Pro;
+    font-size:18px;
+    font-weight:bold;
+    color:#ffffff;
+    text-decoration:none;
+}
+.sidebar-nav li.current {
+    background-color:#F36F25;
+}
+.sidebar-nav li.current a {
+    color:#FFFFFF;
+}
+.sidebar-nav ul li ul {//from here
+    display:none;
+    list-style-type:none;
+    width:125px;
+    padding:0px;
+    margin-top:3px;
+    margin-left:-5px;
+}
+.sidebar-nav ul li:hover ul {
+    display:inline-block;
+}
+.sidebar-nav ul li:hover ul  ul li {
+    background-color:#ff383f;
+    //width:500px;
+    //height:50px;
+   display:inline-block;      
+  cursor:pointer; cursor:hand;
+}
+.sidebar-nav  li:hover{
+//   curosr:pointer; cursor:hand;
+}
+
+.sidebar-nav ul li ul li a {
+    color:#FFF;
+  //  text-decoration:underline;
+}
+.sidebar-nav ul li ul li a:hover {//till here
+    text-decoration:none;
+}
+.sidebar-nav li ul {
+    display: none;
+    margin-top: 10px;
+    padding: 0;
+}
+.sidebar-nav li:hover ul {
+    display: inline-block;   
+}
+.sidebar-nav li:hover .sub-menu
+{
+    position: absolute;   
+   margin-top: -27.5px;
+   margin-left: -17.5px;
+}
+.sub-menu li
+{	
+  text-align:center;
+    position: relative;
+   display: block;   //&lt;--------------Here
+    bottom: 10;a
+   // left: 100%;
+    width: 80%;
+    min-width: 100px;
+    white-space: nowrap;
+   z-index:1000000;
+}
+
+.sub-menu li a:hover{
+ background-color:#ff383f; 
+  color:white; 
+  
+}//To keep the state 
+
+
+.sidebar-nav li:hover a{ 
+    background-color: #083c5d;
+  color:white;
+ //   text-decoration: underline;
+}
+
+.sidebar-nav li a
+{
+    display:inline-block;
+    cursor:pointer; cursor:hand;
+  //  padding: 0 10px;
+}
+
+#sidebar li a:hover{
+ background-color:#ff383f; 
+  color:white;
+}
+
+.sub-menu li{
+  
+ background-color:  #083c5d;
+}
+
+.sub-menu li a
+{
+    
+  cursor:pointer; cursor:hand;  font-size: 12px;
+  //  padding: 0 10px;
+}
+/////////////////////////////
+
+.row{
+   margin-left:-20px;margin-bottom:10px;margin-top:10px
+}
+
+#wrapper {
+    padding-left: 20px;
+    transition: all .4s ease 0s;
+    height: 100%
+}
+
+#sidebar-wrapper {
+    margin-left: -200px;
+    left: 70px;
+    width: 200px;
+    background-color: #222;
+    position: fixed;
+ // 	margin-top:50px;
+    height: 40%;
+    z-index: 10000;
+    transition: all .4s ease 0s; 
+   // top:55% //&lt;--------here
+}
+
+.sidebar-nav {
+    display: block;
+    float: left;
+    width: 200px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  
+}
+ 
+#sidebar{
+ //visibility:hidden; 
+}
+
+#wrapper {
+    padding-left: 200px;
+}
+#wrapper #sidebar-wrapper {
+    left: 200px;
+  }
+#wrapper.active #sidebar{
+ 	visibility:visible; 
+}
+ 
+ 
+
+
+#sidebar_menu li a, .sidebar-nav li a {
+    color: #999;
+    display: block;
+    float: left;
+    text-decoration: none;
+    width: 200px;
+ //   background: #252525;
+  //  border-top: 1px solid #373737;
+   // border-bottom: 1px solid #1A1A1A;
+    //-webkit-transition: background .5s;
+    //-moz-transition: background .5s;
+    //-o-transition: background .5s;
+    //-ms-transition: background .5s;
+    //transition: background .5s;
+}
+.sidebar_name {
+    padding-top: 25px;
+    color: #fff;
+    opacity: .7;
+}
+
+.sidebar-nav li {
+  line-height: 40px;
+  text-indent: 20px;
+}
+
+
+ 
+.sidebar-nav &gt; .sidebar-brand {
+  height: 65px;
+  line-height: 60px;
+  font-size: 20px;
+}
+
+.sidebar-nav &gt; .sidebar-brand a {
+  color: #999999;
+}
+ 
+.sidebar-nav &gt; .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+#main_icon
+{
+    float:right;
+margin-right: 10px;
+   padding-top:20px;
+    
+}
+.sub_icon
+{
+    float:right;
+   padding-right: 65px;
+   padding-top:10px;
+}
+.sidebar-brand{
+ font-size:25px;
+  color:white;
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////
+
+
+.fade-carousel {
+    position: relative;
+    height: 260px;
+}
+.fade-carousel .carousel-inner .item {
+    height: 260px;
+}
+.fade-carousel .carousel-indicators &gt; li {
+    margin: 0 2px;
+    background-color: #f39c12;
+    border-color: #f39c12;
+    opacity: .7;
+}
+.fade-carousel .carousel-indicators &gt; li.active {
+  width: 10px;
+  height: 10px;
+  opacity: 1;
+}
+
+ hgroup{
+   
+ //  background: rgba(243, 156, 18, .5);
+   //width:50%;
+    text-align: center;
+   float:center;
+ }
+/********************************/
+/*          Hero Headers        */
+/********************************/
+
+.hero {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+   z-index: 3;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+   // text-shadow: 1px 1px 0 rgba(0,0,0,.75);
+      -webkit-transform: translate3d(-50%,-50%,0);
+         -moz-transform: translate3d(-50%,-50%,0);
+          -ms-transform: translate3d(-50%,-50%,0);
+           -o-transform: translate3d(-50%,-50%,0);
+              transform: translate3d(-50%,-50%,0);
+}
+.hero h1 {
+    font-size: 5em;    
+    font-weight: bold;
+    margin: 0;
+    padding: 0;
+}
+
+.hero h3 {
+    font-size: 2em;    
+    font-weight: bold;
+  color:white;
+    margin: 0;
+    padding: 0;
+}
+
+
+.fade-carousel .carousel-inner .item .hero {
+    opacity: 0;
+    -webkit-transition: 1s all ease-in-out .1s;
+       -moz-transition: 1s all ease-in-out .1s; 
+        -ms-transition: 1s all ease-in-out .1s; 
+         -o-transition: 1s all ease-in-out .1s; 
+            transition: 1s all ease-in-out .1s; 
+}
+.fade-carousel .carousel-inner .item.active .hero {
+    opacity: 1;
+    -webkit-transition: 1s all ease-in-out .1s;
+       -moz-transition: 1s all ease-in-out .1s; 
+        -ms-transition: 1s all ease-in-out .1s; 
+         -o-transition: 1s all ease-in-out .1s; 
+            transition: 1s all ease-in-out .1s;    
+}
+
+/********************************/
+/*            Overlay           */
+/********************************/
+.overlay {
+    position: absolute;
+    width: 95%;
+    height: 100%;
+    z-index: 2;
+  //  background-color: #080d15;
+  //  opacity: .7;
+}
+
+/********************************/
+/*          Custom Buttons      */
+/********************************/
+ .btn.btn-lg {padding: 10px 40px;}
+.btn.btn-hero,
+.btn.btn-hero:hover,
+.btn.btn-hero:focus {
+    color: #f5f5f5;
+    background-color: #1abc9c;
+    border-color: #1abc9c;
+    outline: none;
+    margin: 30px auto; 
+	cursor:hand;
+}
+
+/********************************/
+/*       Slides backgrounds     */
+/********************************/
+.fade-carousel .slides .slide-1, 
+.fade-carousel .slides .slide-2,
+.fade-carousel .slides .slide-3 {
+  height: 250px;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.fade-carousel .slides .slide-1 {
+  background-image: url('app-img1.jpg') ; 
+}
+.fade-carousel .slides .slide-2 {
+  background-image: url('http://ismptlapps/sites/DAMSC/Assets/Image%20Assets/shutterstock_366977921.jpg');
+    background-position: 0% 90%;
+}
+.fade-carousel .slides .slide-3 {
+  background-image: url('http://ismptlapps/sites/DAMSC/Assets/Image%20Assets/GettyImages-483636107.jpg');
+ background-position: 0% 40%;
+}
+
+/********************************/
+/*          Media Queries       */
+/********************************/
+@media screen and (min-width: 980px){
+    .hero { width: 980px; }    
+}
+@media screen and (max-width: 640px){
+    .hero h1 { font-size: 4em; }    
+}*/
+
+/////////////////////////////////////////////////////////////////////////////////
+.ribbon-wrapper-red {
+  width: 40%;z-index:5;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.ribbon-red {
+  font: bold 12px;  color: #fff;
+  text-align: center;
+  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+  -webkit-transform: rotate(315deg);
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+  position: absolute;
+  padding: 7px 0;
+ left: -35px;
+  top: 10px;
+  width: 120px;
+  background-color: #FF0000;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45)); 
+  background-image: -webkit-linear-gradient(top, #FF0000, #990000); 
+  background-image:    -moz-linear-gradient(top, #FF0000, #990000); 
+  background-image:     -ms-linear-gradient(top, #FF0000, #990000); 
+  background-image:      -o-linear-gradient(top, #FF0000, #990000); 
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+  box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+}
+ 
+.ribbon-red:before, .ribbon-red:after {
+  content: "";
+  border-top:   3px solid #990000;   
+  border-left:  3px solid transparent;
+  border-right: 3px solid transparent;
+  position:absolute;
+  bottom: -3px;
+}
+
+.ribbon-red:before {
+  left: 0;
+}
+.ribbon-red:after {
+  right: 0;
+} 
+///////////////////////////////////////////////
+.ribbon-wrapper-green {
+  width: 40%;z-index:5;
+  height: 88px;
+  overflow: hidden;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+}
+
+.ribbon-green {
+  font: bold 12px;  color: #fff;
+  text-align: center;
+  text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+  -webkit-transform: rotate(315deg);
+  -moz-transform:    rotate(45deg);
+  -ms-transform:     rotate(45deg);
+  -o-transform:      rotate(45deg);
+  position: absolute;
+  padding: 7px 0;
+ left: -35px;
+  top: 10px;
+  width: 120px;
+  background-color: #19B319;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45)); 
+  background-image: -webkit-linear-gradient(top, #00FF00, #19B319); 
+  background-image:    -moz-linear-gradient(top, #00FF00, #19B319); 
+  background-image:     -ms-linear-gradient(top, #00FF00, #19B319); 
+  background-image:      -o-linear-gradient(top, #00FF00, #19B319); 
+  color: #fff;
+  -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+  -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+  box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+}
+ 
+.ribbon-green:before, .ribbon-green:after {
+  content: "";
+  border-top:   3px solid #19B319;   
+  border-left:  3px solid transparent;
+  border-right: 3px solid transparent;
+  position:absolute;
+  bottom: -3px;
+}
+
+.ribbon-green:before {
+  left: 0;
+}
+.ribbon-green:after {
+  right: 0;
+} 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+
+#incident:active{
+   background-color:#a9a9a9; 
+}
+#incident:focus{
+   background-color:#a9a9a9; 
+}
+
+
+  #incident:target{  
+ background-color:#a9a9a9; color:white;transition:1s;
+ transition-timing-function:  ease   ; 
+   
+}
+
+ #itportal:target{
+  
+ background-color:#a9a9a9;
+  	transition-timing-function:  ease; 
+}
+ #hrportal:target{
+  
+ background-color:#a9a9a9;
+  	transition-timing-function:  ease; 
+}
+ #secops:target{
+  
+ background-color:#a9a9a9;
+  	transition-timing-function:  ease; 
+}
+ #problem:target{
+  
+ background-color:#a9a9a9;
+  	transition-timing-function:  ease; 
+}
+
+ #manageasset:target{  
+ background-color:#a9a9a9;
+  	transition-timing-function: ease; 
+}
+ #train:target{  
+ background-color:#a9a9a9;
+  	transition-timing-function: ease; 
+}
+ #licenceDash:target{  
+ background-color:#a9a9a9;
+  	transition-timing-function: ease; 
+}
+ #knowledge:target{  
+ background-color:#a9a9a9;
+  	transition-timing-function: ease; 
+}
+#change:target{  
+ background-color:#a9a9a9;
+  transition-timing-function: ease; 
+}
+#asset:target{  
+ background-color:#a9a9a9;
+  	transition-timing-function: ease; 
+}
+#cmdb:target{  
+ background-color:#a9a9a9;
+  	transition-timing-function: ease;
+}
+#ecatalog:target{  
+ background-color:#a9a9a9;
+  transition-timing-function: ease;
+}
+#dashboard:target{  
+ background-color:#a9a9a9;
+  	transition-timing-function: ease;
+}
+#desk:target{  
+ background-color:#a9a9a9;
+  	transition-timing-function: ease;
+}
+#release:target{  
+ background-color:#a9a9a9;
+  	transition-timing-function: ease;
+}
+#bulk:target{  
+ background-color:#a9a9a9;
+transition-timing-function: ease;
+}
+#bar:target{  
+ background-color:#a9a9a9;
+  transition-timing-function: ease;
+}
+#employee:target{  
+ background-color:#a9a9a9;
+  transition-timing-function: ease;
+}
+#ios:target{  
+ background-color:#a9a9a9;
+ transition-timing-function: ease;
+}
+#management:target{  
+ background-color:#a9a9a9;
+  transition-timing-function: ease;
+}
+#bar:target{  
+ background-color:#a9a9a9;
+  	transition-timing-function: ease;
+}
+#travel:target{  
+ background-color:#a9a9a9;
+  	transition-timing-function: ease;
+}
+#utility:target{  
+ background-color:#a9a9a9;
+  transition-timing-function: ease;
+}
+#password:target{  
+ background-color:#a9a9a9;
+  	transition-timing-function: ease;
+}
+#audit:target{  
+ background-color:#a9a9a9;
+  	transition-timing-function: ease;
+}
+#siam:target{  
+ background-color:#a9a9a9;
+  transition-timing-function: ease;
+}
+
+
+#explore{
+ text-align:center;
+  left:0;
+  right:0;
+  bottom:0px;
+  position:absolute;
+   font-family: Myriad Pro;
+}
+ 
+ 
+
+img{
+ background-size:cover; 
+  
+}
+ 
+.tile-img{
+  margin-top:12px;} 
+ 
+  .rating{
+   margin-left:10px; padding-top:0px;margin-bottom:10px 
+    
+  }
+  
+  
+ 
+h3 , p{
+ color:#545454; 
+  margin-left:5px;
+  margin-top:-10px;
+  
+}
+h3{
+  font-size:14px; padding:0px;
+  margin-left:10px
+}
+ p{
+    margin-left:10px;
+    font-size:11px;
+ }
+
+/*
+.tile {
+    
+  overflow:hidden; 
+  text-overflow: ellipsis;
+  
+}
+.tile:hover{
+ cursor: hand;cursor:pointer;
+  opacity:0.6;
+ // -webkit-filter: grayscale(100%); filter: grayscale(100%);
+   
+  transition: all .25s ease;
+   
+}*/
+ 
+
+p{
+ padding:5px 
+}
+.tile{
+  
+ border:0;border-bottom:0;border-left:0;box-shadow: inset 0 -3.2px rgba(0, 0, 0, 0.2),inset 0px 0 rgba(0, 0, 0, 0.2);outline:none;-webkit-outline:none;-o-outline:none;-moz-outline:none;}
+}
+ /*
+.carousel-slide {
+    float: left;
+    height: 100%;
+    transform: translateZ(0);
+    -webkit-transform: translateZ(0);
+    overflow: hidden;
+}
+ */
+    
+   h2{
+    font-size:22px;
+     margin-left:10px;
+     
+   }
+ 
+
+	.clear {
+    clear: both;
+}
+/*
+.preview-overlay-container {
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    opacity: 0;
+    filter: alpha(opacity=0);
+    -webkit-transition: all .25s ease;
+    transition: all .25s ease;
+    background: rgba(0,0,0,0.4);
+    cursor: pointer;
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+}*/
+ 
+/////////////////////////////////////////////////
+//////////////////////////////////////////////////
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+*, *:before, *:after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100vh;
+}
+
+body {
+  font: 14px/1 'Open Sans', sans-serif;
+  color: #555;
+  background: #eee;
+}
+
+h1 {
+  padding: 50px 0;
+  font-weight: 400;
+  text-align: center;
+}
+
+p {
+  margin: 0 0 20px;
+  line-height: 1.5;
+}
+
+main {
+  min-width: 700px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+section {
+  display: none;
+  padding: 20px 0 0;
+  border-top: 1px solid #ddd;
+}
+
+input {
+  display: none;
+}
+
+label {
+  display: inline-block;
+  margin: 0 0 -1px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #383838;
+  border: 1px solid transparent;
+}
+
+label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+//label[for*='1']:before { content: '\f17d'; }
+//label[for*='2']:before { content: '\f17d'; }
+//label[for*='3']:before { content: '\f17d'; }
+//label[for*='4']:before { content: '\f17d'; }
+//label[for*='5']:before { content: '\f17d'; }
+//label[for*='6']:before { content: '\f17d'; }
+//label[for*='7']:before { content: '\f17d'; }
+//label[for*='8']:before { content: '\f17d'; }
+//label[for*='9']:before { content: '\f17d'; }
+
+label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+input:checked + label {
+  color: #383838;
+  font-size:16px;
+  border: 1px solid #ddd;
+  border-top: 3px solid orange;
+  border-bottom: 1px solid #eee;
+}
+
+#tab1:checked ~ #content1,
+#tab2:checked ~ #content2,
+#tab3:checked ~ #content3,
+#tab4:checked ~ #content4,
+#tab5:checked ~ #content5,
+#tab6:checked ~ #content6,
+#tab7:checked ~ #content7,
+#tab8:checked ~ #content8,
+#tab9:checked ~ #content9,
+#tab10:checked ~ #content10
+{
+  display: block;
+}
+
+@media screen and (max-width: 650px) {
+  label {
+    font-size: 0;
+  }
+  label:before {
+    margin: 0;
+    font-size: 18px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  label {
+    padding: 15px;
+  }
+}</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>true</has_preview>
+        <id>esm_cafe_app_store_studio</id>
+        <internal>false</internal>
+        <link/>
+        <name>ESM Cafe App Store Studio</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+data.articles = {};
+var gr = new GlideRecord('kb_knowledge');
+	gr.addEncodedQuery('workflow_state=published');
+gr.query();
+	data.count=0;
+while(gr.next()){
+	var lengthString = "";
+	data.count++;
+var key = gr.number.getDisplayValue();
+var rating = gr.rating.getDisplayValue();
+	rating = parseInt(rating);
+
+	for(var i = 0;i<rating;i++){
+		
+		lengthString = lengthString + '<img src="stars.png" width="10" height="10"/>';
+	}
+	
+data.articles[key] = lengthString;
+}
+
+	data.app =[];
+ var app = new GlideRecord('u_esm_cafe_app_store');
+app.addActiveQuery();
+	app.orderBy('u_order');
+	app.query();
+	
+	while(app.next()){
+		obj ={};
+		obj.appName = app.getDisplayValue('u_app_name');
+		obj.category = app.getDisplayValue('u_category');
+		obj.kbSysID = app.getValue('u_kb_article_number');
+		obj.description = app.getDisplayValue('u_description');
+		obj.appType = app.getDisplayValue('u_app_type');
+		/******* to get Image **********/
+		var attach = new GlideRecord('sys_attachment');
+		attach.addQuery('table_sys_id',app.getUniqueValue());
+		attach.query();
+		while(attach.next()){
+			obj.imgSrc = attach.getUniqueValue();
+		}
+		/*********** end of image *********/
+		/*********** to get kb article number*******/
+		var knowledge = new GlideRecord('kb_knowledge');
+		knowledge.addQuery('sys_id',app.getValue('u_kb_article_number'));
+		knowledge.query();
+		while(knowledge.next()){
+			obj.kbNumber = knowledge.getDisplayValue('number');
+		}
+		/*********** End of KB number **************/
+		data.app.push(obj);
+	}
+	
+}
+ )();
+
+]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_widget</sys_class_name>
+        <sys_created_by>divya.m23</sys_created_by>
+        <sys_created_on>2018-01-16 05:26:05</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>6db3e2770f2b8300637ce44be1050e56</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>ESM Cafe App Store Studio</sys_name>
+        <sys_package display_value="Portal Development" source="x_infte_portal_dev">0971a6f30f2b8300637ce44be1050e1f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Portal Development">0971a6f30f2b8300637ce44be1050e1f</sys_scope>
+        <sys_update_name>sp_widget_6db3e2770f2b8300637ce44be1050e56</sys_update_name>
+        <sys_updated_by>divya.m23</sys_updated_by>
+        <sys_updated_on>2018-01-16 05:26:20</sys_updated_on>
+        <template><![CDATA[<div class=" row " style="margin-left:30px;margin-right:10px;margin-top:-20px;" >
+<div class="col-md-16" style="margin-left:-45px;margin-right:-45px;margin-bottom:5px !important">
+<div id=" ">
+<div style="  "> 
+<div class=" ">
+<div class="carousel fade-carousel slide" data-ride="carousel" data-interval="4000" id="carousel3" style="padding-left:-30px;">
+   <!-- Overlay -->
+   <div class="overlay"></div>
+   <!-- Indicators -->
+   <ol class="carousel-indicators" style="margin-left:-400px">
+      <li data-target="#carousel3" data-slide-to="0" class="active"></li>
+      <li data-target="#carousel3" data-slide-to="1"></li>
+      <li data-target="#carousel3" data-slide-to="2"></li>
+   </ol>
+   <!-- Wrapper for slides -->
+   <div class="carousel-inner">
+      <div class="item slides active" >
+         <div  class="slide-1" onclick="alert('ds')"> </div>
+         <div class="hero"  >
+            <hgroup>
+               <h1 style="opacity:1;color:white">Mobile Apps</h1>
+               <h3 style="opacity:1;color:white">Access your data anywhere, anytime</h3>
+            </hgroup>
+         </div>
+      </div>
+      <div class="item slides">
+         <div class="slide-2"></div>
+         <div class="hero">
+            <hgroup>
+               <h1 style="opacity:1">Customized Dashboards</h1>
+               <h3 style="opacity:1">Interactive way to see your data </h3>
+            </hgroup>
+         </div>
+      </div>
+      <div class="item slides">
+         <div class="slide-3"></div>
+         <div class="hero">
+            <hgroup>
+               <h1 style="opacity:1">Service Portal & Catalog</h1>
+               <h3 style="opacity:1">"ESM café has reduced the development effort by 40% in terms of catalog items and other workflows"-BJ Services Project Delivery Team</h3>
+            </hgroup>
+         </div>
+      </div>
+   </div>
+</div>
+<!--  Horizontal Tab begin --------- -->
+<main>
+   <input id="tab1" type="radio" name="tabs" checked>
+   <label for="tab1">All Apps</label>
+   <input id="tab2" type="radio" name="tabs">
+   <label for="tab2">Service Management</label>
+   <input id="tab3" type="radio" name="tabs">
+   <label for="tab3">Mobility & User Exp</label>
+   <input id="tab4" type="radio" name="tabs">
+   <label for="tab4">SM Analytics</label>
+   <input id="tab5" type="radio" name="tabs">
+   <label for="tab5">BSA</label>
+   <input id="tab6" type="radio" name="tabs" >
+   <label for="tab6">IT Operations</label>
+   <input id="tab7" type="radio" name="tabs">
+   <label for="tab7">Training Portal</label>
+   <input id="tab8" type="radio" name="tabs">
+   <label for="tab8">Integration Platform</label>
+   <input id="tab9" type="radio" name="tabs">
+   <label for="tab9">AI</label>
+   <input id="tab10" type="radio" name="tabs">
+   <label for="tab10">Vertical Solution</label>
+   <section id="content1">
+      <div id='itsm'>
+         <div class="row " style="margin-left:-56px">
+            <div class=" col-md-2" style="margin-right:35px;margin-top:20px;" ng-repeat="app in data.app">
+               <div class="box">
+                  <div class="stay-in-place" id="incident" >
+                     <img src="/{{app.imgSrc}}.iix" class="    "   height=80% width=100%/>
+                     <br> <br>
+                     <h3 ><b>{{app.appName}}</b></h3>
+                     <span style="margin-left:8px"compile-html="data.articles.{{app.kbNumber}}"></span>
+                     <span ng-if="app.appType=='New'" class="ribbon-wrapper-green"><span class="ribbon-green">New!</span></span>
+                     <span ng-if="app.appType=='Upcoming'" class="ribbon-wrapper-red"><span class="ribbon-red">Upcoming</span></span>
+                  </div>
+                  <div class="move-in-to-place">
+                     <h3 style="color:white;margin-top:5px; text-align:center"><b>{{app.appName}}</b></h3>
+                     <p style="text-align:center; color:white ">{{app.description}} </p>
+                     <a id="explore" style="padding-bottom:10px;color:white;text-decoration:underline" href ="/app_store/?id=kb_article&sys_id={{app.kbSysID}}" >Explore </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="content2">
+      <div id='itsm'>
+         <div class="row" style="margin-left:-56px"   >
+            <div class=" col-md-2" style="margin-right:35px;margin-top:20px;" ng-repeat="app in data.app" ng-if="app.category=='Service Management'">
+               <div class="box">
+                  <div class="stay-in-place" id="incident" >
+                     <img src="/{{app.imgSrc}}.iix" class="    "   height=80% width=100%/>
+                     <br> <br>
+                     <h3 ><b>{{app.appName}}</b></h3>
+                     <span style="margin-left:8px"compile-html="data.articles.{{app.kbNumber}}"></span>
+                     <span ng-if="app.appType=='New'" class="ribbon-wrapper-green"><span class="ribbon-green">New!</span></span>
+                     <span ng-if="app.appType=='Upcoming'" class="ribbon-wrapper-red"><span class="ribbon-red">Upcoming</span></span>
+                  </div>
+                  <div class="move-in-to-place">
+                     <h3 style="color:white;margin-top:5px; text-align:center"><b>{{app.appName}}</b></h3>
+                     <p style="text-align:center; color:white ">{{app.description}}</p>
+                     <a id="explore" style="padding-bottom:10px;color:white;text-decoration:underline" href ="/app_store/?id=kb_article&sys_id={{app.kbSysID}}" >Explore </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="content3">
+      <div id = "user">
+         <div class="row  " style="margin-left:-56px"  >
+            <div class=" col-md-2" style="margin-right:35px;margin-top:20px;" ng-repeat="app in data.app" ng-if="app.category=='Mobility & User Exp'">
+               <div class="box">
+                  <div class="stay-in-place" id="incident" >
+                     <img src="/{{app.imgSrc}}.iix" class="    "   height=80% width=100%/>
+                     <br> <br>
+                     <h3 ><b>{{app.appName}}</b></h3>
+                     <span style="margin-left:8px"compile-html="data.articles.{{app.kbNumber}}"></span>
+                     <span ng-if="app.appType=='New'" class="ribbon-wrapper-green"><span class="ribbon-green">New!</span></span>
+                     <span ng-if="app.appType=='Upcoming'" class="ribbon-wrapper-red"><span class="ribbon-red">Upcoming</span></span>
+                  </div>
+                  <div class="move-in-to-place">
+                     <h3 style="color:white;margin-top:5px; text-align:center"><b>{{app.appName}}</b></h3>
+                     <p style="text-align:center; color:white ">{{app.description}}</p>
+                     <a id="explore" style="padding-bottom:10px;color:white;text-decoration:underline" href ="/app_store/?id=kb_article&sys_id={{app.kbSysID}}" >Explore </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="content4">
+      <div id="service">
+         <div class="row  " style="margin-left:-56px" >
+            <div class=" col-md-2" style="margin-right:35px;margin-top:20px;" ng-repeat="app in data.app" ng-if="app.category=='SM Analytics'">
+               <div class="box">
+                  <div class="stay-in-place" id="incident" >
+                     <img src="/{{app.imgSrc}}.iix" class="    "   height=80% width=100%/>
+                     <br> <br>
+                     <h3 ><b>{{app.appName}}</b></h3>
+                     <span style="margin-left:8px"compile-html="data.articles.{{app.kbNumber}}"></span>
+                     <span ng-if="app.appType=='New'" class="ribbon-wrapper-green"><span class="ribbon-green">New!</span></span>
+                     <span ng-if="app.appType=='Upcoming'" class="ribbon-wrapper-red"><span class="ribbon-red">Upcoming</span></span>
+                  </div>
+                  <div class="move-in-to-place">
+                     <h3 style="color:white;margin-top:5px; text-align:center"><b>{{app.appName}}</b></h3>
+                     <p style="text-align:center; color:white ">{{app.description}}</p>
+                     <a id="explore" style="padding-bottom:10px;color:white;text-decoration:underline" href ="/app_store/?id=kb_article&sys_id={{app.kbSysID}}" >Explore </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="content5">
+      <div id="business">
+         <div class="row  " style="margin-left:-56px"   >
+            <div class=" col-md-2" style="margin-right:35px;margin-top:20px;" ng-repeat="app in data.app" ng-if="app.category=='BSA'">
+               <div class="box">
+                  <div class="stay-in-place" id="incident" >
+                     <img src="/{{app.imgSrc}}.iix" class="    "   height=80% width=100%/>
+                     <br> <br>
+                     <h3 ><b>{{app.appName}}</b></h3>
+                     <span style="margin-left:8px"compile-html="data.articles.{{app.kbNumber}}"></span>
+                     <span ng-if="app.appType=='New'" class="ribbon-wrapper-green"><span class="ribbon-green">New!</span></span>
+                     <span ng-if="app.appType=='Upcoming'" class="ribbon-wrapper-red"><span class="ribbon-red">Upcoming</span></span>
+                  </div>
+                  <div class="move-in-to-place">
+                     <h3 style="color:white;margin-top:5px; text-align:center"><b>{{app.appName}}</b></h3>
+                     <p style="text-align:center; color:white ">{{app.description}}</p>
+                     <a id="explore" style="padding-bottom:10px;color:white;text-decoration:underline" href ="/app_store/?id=kb_article&sys_id={{app.kbSysID}}" >Explore </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="content6">
+      <div  id="itom">
+         <div class="row  " style="margin-left:-56px" >
+            <div class=" col-md-2" style="margin-right:35px;margin-top:20px;" ng-repeat="app in data.app" ng-if="app.category=='IT Operations'">
+               <div class="box">
+                  <div class="stay-in-place" id="incident" >
+                     <img src="/{{app.imgSrc}}.iix" class="    "   height=80% width=100%/>
+                     <br> <br>
+                     <h3 ><b>{{app.appName}}</b></h3>
+                     <span style="margin-left:8px"compile-html="data.articles.{{app.kbNumber}}"></span>
+                     <span ng-if="app.appType=='New'" class="ribbon-wrapper-green"><span class="ribbon-green">New!</span></span>
+                     <span ng-if="app.appType=='Upcoming'" class="ribbon-wrapper-red"><span class="ribbon-red">Upcoming</span></span>
+                  </div>
+                  <div class="move-in-to-place">
+                     <h3 style="color:white;margin-top:5px; text-align:center"><b>{{app.appName}}</b></h3>
+                     <p style="text-align:center; color:white ">{{app.description}}</p>
+                     <a id="explore" style="padding-bottom:10px;color:white;text-decoration:underline" href ="/app_store/?id=kb_article&sys_id={{app.kbSysID}}" >Explore </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="content7">
+      <div  id="trainrow">
+         <div class="row  " style="margin-left:-56px" >
+            <div class=" col-md-2" style="margin-right:35px;margin-top:20px;" ng-repeat="app in data.app" ng-if="app.category=='Training Portal'">
+               <div class="box">
+                  <div class="stay-in-place" id="incident" >
+                     <img src="/{{app.imgSrc}}.iix" class="    "   height=80% width=100%/>
+                     <br> <br>
+                     <h3 ><b>{{app.appName}}</b></h3>
+                     <span style="margin-left:8px"compile-html="data.articles.{{app.kbNumber}}"></span>
+                     <span ng-if="app.appType=='New'" class="ribbon-wrapper-green"><span class="ribbon-green">New!</span></span>
+                     <span ng-if="app.appType=='Upcoming'" class="ribbon-wrapper-red"><span class="ribbon-red">Upcoming</span></span>
+                  </div>
+                  <div class="move-in-to-place">
+                     <h3 style="color:white;margin-top:5px; text-align:center"><b>{{app.appName}}</b></h3>
+                     <p style="text-align:center; color:white ">{{app.description}}</p>
+                     <a id="explore" style="padding-bottom:10px;color:white;text-decoration:underline" href ="/app_store/?id=kb_article&sys_id={{app.kbSysID}}" >Explore </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="content8">
+      <div  id="ipm" >
+         <div class="row  " style="margin-left:-56px" >
+            <div class=" col-md-2" style="margin-right:35px;margin-top:20px;" ng-repeat="app in data.app" ng-if="app.category=='Integration Platform'">
+               <div class="box">
+                  <div class="stay-in-place" id="incident" >
+                     <img src="/{{app.imgSrc}}.iix" class="    "   height=80% width=100%/>
+                     <br> <br>
+                     <h3 ><b>{{app.appName}}</b></h3>
+                     <span style="margin-left:8px"compile-html="data.articles.{{app.kbNumber}}"></span>
+                     <span ng-if="app.appType=='New'" class="ribbon-wrapper-green"><span class="ribbon-green">New!</span></span>
+                     <span ng-if="app.appType=='Upcoming'" class="ribbon-wrapper-red"><span class="ribbon-red">Upcoming</span></span>
+                  </div>
+                  <div class="move-in-to-place">
+                     <h3 style="color:white;margin-top:5px; text-align:center"><b>{{app.appName}}</b></h3>
+                     <p style="text-align:center; color:white ">{{app.description}}</p>
+                     <a id="explore" style="padding-bottom:10px;color:white;text-decoration:underline" href ="/app_store/?id=kb_article&sys_id={{app.kbSysID}}" >Explore </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="content9">
+      <div id="ai">
+         <div class="row  " style="margin-left:-56px" >
+            <div class=" col-md-2" style="margin-right:35px;margin-top:20px;" ng-repeat="app in data.app" ng-if="app.category=='AI'">
+               <div class="box">
+                  <div class="stay-in-place" id="incident" >
+                     <img src="/{{app.imgSrc}}.iix" class="    "   height=80% width=100%/>
+                     <br> <br>
+                     <h3 ><b>{{app.appName}}</b></h3>
+                     <span style="margin-left:8px"compile-html="data.articles.{{app.kbNumber}}"></span>
+                     <span ng-if="app.appType=='New'" class="ribbon-wrapper-green"><span class="ribbon-green">New!</span></span>
+                     <span ng-if="app.appType=='Upcoming'" class="ribbon-wrapper-red"><span class="ribbon-red">Upcoming</span></span>
+                  </div>
+                  <div class="move-in-to-place">
+                     <h3 style="color:white;margin-top:5px; text-align:center"><b>{{app.appName}}</b></h3>
+                     <p style="text-align:center; color:white ">{{app.description}}</p>
+                     <a id="explore" style="padding-bottom:10px;color:white;text-decoration:underline" href ="/app_store/?id=kb_article&sys_id={{app.kbSysID}}" >Explore </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="content10">
+      <div id="vertical">
+         <div class="row  " style="margin-left:-56px" >
+            <div class=" col-md-2" style="margin-right:35px;margin-top:20px;" ng-repeat="app in data.app" ng-if="app.category=='Vertical Solution'">
+               <div class="box">
+                  <div class="stay-in-place" id="incident" >
+                     <img src="/{{app.imgSrc}}.iix" class="    "   height=80% width=100%/>
+                     <br> <br>
+                     <h3 ><b>{{app.appName}}</b></h3>
+                     <span style="margin-left:8px"compile-html="data.articles.{{app.kbNumber}}"></span>
+                     <span ng-if="app.appType=='New'" class="ribbon-wrapper-green"><span class="ribbon-green">New!</span></span>
+                     <span ng-if="app.appType=='Upcoming'" class="ribbon-wrapper-red"><span class="ribbon-red">Upcoming</span></span>
+                  </div>
+                  <div class="move-in-to-place">
+                     <h3 style="color:white;margin-top:5px; text-align:center"><b>{{app.appName}}</b></h3>
+                     <p style="text-align:center; color:white ">{{app.description}}</p>
+                     <a id="explore" style="padding-bottom:10px;color:white;text-decoration:underline" href ="/app_store/?id=kb_article&sys_id={{app.kbSysID}}" >Explore </a>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+</main>
+<!--  Horizontal Tab END --------- -->]]></template>
+    </sp_widget>
+</record_update>
