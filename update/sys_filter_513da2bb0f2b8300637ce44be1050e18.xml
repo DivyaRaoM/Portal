@@ -1,30 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <record_update sys_domain="global" table="sys_filter">
     <sys_filter action="INSERT_OR_UPDATE">
-        <filter table="sp_page">idSTARTSWITHkb^idISNOTEMPTY^EQ<item endquery="false" field="id" goto="false" newquery="false" operator="STARTSWITH" or="false" value="kb"/>
+        <filter table="sp_page">idSTARTSWITHesm caf^idISNOTEMPTY^EQ<item endquery="false" field="id" goto="false" newquery="false" operator="STARTSWITH" or="false" value="esm caf"/>
             <item endquery="false" field="id" goto="false" newquery="false" operator="ISNOTEMPTY" or="false" value=""/>
             <item endquery="true" field="" goto="false" newquery="false" operator="=" or="false" value=""/>
         </filter>
         <group/>
-        <last_used>2018-01-16 06:08:26</last_used>
+        <last_used>2018-01-16 06:07:35</last_used>
         <mobile>true</mobile>
         <roles/>
         <sys_class_name>sys_filter</sys_class_name>
         <sys_created_by>divya.m23</sys_created_by>
-        <sys_created_on>2018-01-16 05:33:05</sys_created_on>
+        <sys_created_on>2018-01-16 06:07:35</sys_created_on>
         <sys_customer_update>false</sys_customer_update>
         <sys_domain>global</sys_domain>
         <sys_domain_path>/</sys_domain_path>
-        <sys_id>c0552ab70f2b8300637ce44be1050e4f</sys_id>
-        <sys_mod_count>1</sys_mod_count>
+        <sys_id>513da2bb0f2b8300637ce44be1050e18</sys_id>
+        <sys_mod_count>0</sys_mod_count>
         <sys_name>mobile</sys_name>
         <sys_package display_value="Portal Development" source="x_infte_portal_dev">0971a6f30f2b8300637ce44be1050e1f</sys_package>
         <sys_policy/>
         <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
         <sys_scope display_value="Portal Development">0971a6f30f2b8300637ce44be1050e1f</sys_scope>
-        <sys_update_name>sys_filter_c0552ab70f2b8300637ce44be1050e4f</sys_update_name>
+        <sys_update_name>sys_filter_513da2bb0f2b8300637ce44be1050e18</sys_update_name>
         <sys_updated_by>divya.m23</sys_updated_by>
-        <sys_updated_on>2018-01-16 06:08:26</sys_updated_on>
+        <sys_updated_on>2018-01-16 06:07:35</sys_updated_on>
         <table>sp_page</table>
         <title>mobile</title>
         <user display_value="divya.m23">f1444bf2db08720032503220ad96197c</user>
