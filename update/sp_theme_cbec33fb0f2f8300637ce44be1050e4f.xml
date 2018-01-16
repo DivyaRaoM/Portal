@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_theme">
+    <sp_theme action="INSERT_OR_UPDATE">
+        <css_variables/>
+        <footer/>
+        <footer_fixed>true</footer_fixed>
+        <header display_value="ESM Cafe Header Studio1">64e140cc0f3f8300637ce44be1050ee7</header>
+        <name>Appstore Theme Studio</name>
+        <navbar_fixed>true</navbar_fixed>
+        <sys_class_name>sp_theme</sys_class_name>
+        <sys_created_by>divya.m23</sys_created_by>
+        <sys_created_on>2018-01-16 11:56:08</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>cbec33fb0f2f8300637ce44be1050e4f</sys_id>
+        <sys_mod_count>2</sys_mod_count>
+        <sys_name>Appstore Theme Studio</sys_name>
+        <sys_package display_value="Portal Development" source="x_infte_portal_dev">0971a6f30f2b8300637ce44be1050e1f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Portal Development">0971a6f30f2b8300637ce44be1050e1f</sys_scope>
+        <sys_update_name>sp_theme_cbec33fb0f2f8300637ce44be1050e4f</sys_update_name>
+        <sys_updated_by>divya.m23</sys_updated_by>
+        <sys_updated_on>2018-01-16 12:19:19</sys_updated_on>
+    </sp_theme>
+</record_update>

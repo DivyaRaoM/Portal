@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element extends="u_esm_cafe_app_store" label="ESM Cafe App Store Studio" max_length="40" name="x_infte_portal_dev_esm_cafe_app_store_studio" type="collection"/>
+</database>

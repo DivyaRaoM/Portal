@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sp_header_footer">
+    <sp_header_footer action="INSERT_OR_UPDATE">
+        <client_script><![CDATA[function() {  /* widget controller */  var c = this;}]]></client_script>
+        <controller_as>c</controller_as>
+        <css>#nav1{&#13;
+ margin-top:5px;&#13;
+  margin-bottom:10px;    overflow-y:hidden;&#13;
+  height:50px; &#13;
+}&#13;
+&#13;
+  * {&#13;
+  margin: 0;&#13;
+  padding: 0;&#13;
+}&#13;
+ &#13;
+nav {&#13;
+ // margin-top: 10px;&#13;
+  //margin-left:50px;&#13;
+//  padding-bottom:10px;&#13;
+  overflow-y:auto;&#13;
+&#13;
+  &#13;
+}&#13;
+ &#13;
+ul {&#13;
+  overflow: auto;&#13;
+  list-style-type: none;&#13;
+}&#13;
+ input{&#13;
+   background: transparent;&#13;
+    border: none;&#13;
+    border : 2px solid grey;&#13;
+   box-shadow:none;&#13;
+   padding:10px;&#13;
+   color:#fff; width:400px;&#13;
+   &#13;
+   &#13;
+// border:none;&#13;
+  // background:transparent;&#13;
+ }&#13;
+li{&#13;
+    height: 25px;&#13;
+  float: left;&#13;
+  margin-right: 0px;&#13;
+  margin-top:10px;&#13;
+  &#13;
+  padding: 0 20px;&#13;
+  color: #b82601;&#13;
+}&#13;
+nav ul li {&#13;
+ // height: 25px;&#13;
+  float: left;&#13;
+  margin-right: 0px;&#13;
+  margin-top:10px;&#13;
+  border-right: 1px solid #fff;&#13;
+  padding: 0 15px;&#13;
+  color: white;&#13;
+}&#13;
+ &#13;
+li:last-child {&#13;
+  border-right: none;&#13;
+}&#13;
+ &#13;
+li, li a {&#13;
+  text-decoration: none;&#13;
+  color: white;&#13;
+  font: 13px Helvetica, Verdana, sans-serif;&#13;
+  text-transform: uppercase;&#13;
+ &#13;
+  -webkit-transition: all 0.5s ease;&#13;
+  -moz-transition: all 0.5s ease;&#13;
+  -o-transition: all 0.5s ease;&#13;
+  -ms-transition: all 0.5s ease;&#13;
+  transition: all 0.5s ease;&#13;
+}&#13;
+ &#13;
+li:hover, li a:hover {&#13;
+   color: #000;&#13;
+  cursor:pointer;&#13;
+  cursor:hand;&#13;
+}&#13;
+ &#13;
+li.active a {&#13;
+  font-weight: bold;&#13;
+  color: #333;&#13;
+}&#13;
+&#13;
+.appBg {&#13;
+&#13;
+background-image: url("as_bg.png");&#13;
+background-repeat:no-repeat;&#13;
+background-size:cover!important;&#13;
+ &#13;
+}&#13;
+&#13;
+body {&#13;
+  background-color: #ffffff;&#13;
+}&#13;
+&#13;
+&#13;
+.mynav ul {&#13;
+  display: flex;&#13;
+  justify-content: center;&#13;
+  flex-wrap: wrap;&#13;
+  list-style-type: none;&#13;
+  padding: 0;&#13;
+}&#13;
+ &#13;
+.mynav li:not(:last-child) {&#13;
+  margin-right: 10px;&#13;
+}&#13;
+ &#13;
+.mynav a {&#13;
+  display: block;&#13;
+  font-size: 15px;&#13;
+  color: black;&#13;
+  text-decoration: none;&#13;
+  padding:0px 0px;&#13;
+}&#13;
+ &#13;
+.target {&#13;
+  position: relative;&#13;
+  border-bottom: 4px solid transparent;&#13;
+  z-index: -1;&#13;
+  transform: translateX(-60px);&#13;
+}&#13;
+ &#13;
+.mynav a,&#13;
+.target {&#13;
+  transition: all .35s ease-in-out;&#13;
+}&#13;
+&#13;
+.menu-item-nav {&#13;
+            position: relative;&#13;
+  border-bottom: 1px solid #1B966D;&#13;
+            display: inline-block;&#13;
+            font-size: 1.1em;&#13;
+            cursor: pointer;&#13;
+            &amp;:hover {&#13;
+                color: #1B966D;&#13;
+                opacity: 0.8;&#13;
+            }&#13;
+            &amp;:focus {&#13;
+                color: #1B966D;&#13;
+                opacity: 0.8;&#13;
+            }&#13;
+        }&#13;
+&#13;
+&#13;
+&#13;
+//////////////////////////////////&#13;
+&#13;
+</css>
+        <data_table>sp_instance</data_table>
+        <demo_data/>
+        <description/>
+        <docs/>
+        <field_list/>
+        <has_preview>false</has_preview>
+        <id/>
+        <internal>false</internal>
+        <link/>
+        <name>AppstoreHeader_Studio</name>
+        <option_schema/>
+        <public>false</public>
+        <roles/>
+        <script><![CDATA[(function() {
+  /* populate the 'data' object */
+  /* e.g., data.table = $sp.getValue('table'); */
+
+})();]]></script>
+        <servicenow>false</servicenow>
+        <sys_class_name>sp_header_footer</sys_class_name>
+        <sys_created_by>divya.m23</sys_created_by>
+        <sys_created_on>2018-01-16 11:55:13</sys_created_on>
+        <sys_customer_update>true</sys_customer_update>
+        <sys_id>f5ccbb770f2f8300637ce44be1050efb</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>AppstoreHeader_Studio</sys_name>
+        <sys_package display_value="Portal Development" source="x_infte_portal_dev">0971a6f30f2b8300637ce44be1050e1f</sys_package>
+        <sys_policy/>
+        <sys_replace_on_upgrade>false</sys_replace_on_upgrade>
+        <sys_scope display_value="Portal Development">0971a6f30f2b8300637ce44be1050e1f</sys_scope>
+        <sys_update_name>sp_header_footer_f5ccbb770f2f8300637ce44be1050efb</sys_update_name>
+        <sys_updated_by>divya.m23</sys_updated_by>
+        <sys_updated_on>2018-01-16 11:55:34</sys_updated_on>
+        <template><![CDATA[ 
+<div class="appBg" style="margin-top:-10px">
+  <ul style="height:420px;"  >
+    <img src="InfosysESM-Cafe-logo.png" height="50" width="400" style="margin-left:10px;margin-top:10px" >
+    <h1 style="color: #F08080;font-size:40px; margin-top:20px;margin-left:20px; font-weight:bold;font-family:courier">Enterprise Application &<br/> Software Library</h1>
+        
+      <nav class="pull-right" style="margin-top:-150px ;font-weight:bold;font-style:comfortaa;">
+  <ul>
+  
+    <li>
+      <a href="/appstore">Home</a>
+    </li>
+    <li>
+      <a href="/appstore_dashboard/?id=appstore_dashboard&sysparm_domain_restore=false&sysparm_stack=no">Application Dashboard</a>
+    </li>
+    <li>
+     <a href="/appstore_newform_demo/?id=sc_cat_item&sys_id=71f6a798db2ccb0079b4b96c4e96197e">Publish new App</a>
+    </li>
+    <li>
+      <a href="/appstore_newform_demo/?id=sc_cat_item&sys_id=a1b4939cdbe8cb0079b4b96c4e96197a&sysparm_query=active=true" target="_blank">Remove an App</a>
+    </li>
+   
+  </ul>
+</nav>
+       
+    </ul>
+</div>
+
+  
+  <nav class="mynav" style="font-weight:bold;font-style:comfortaa;overflow:hidden !important">
+  <ul>
+    <li>
+      <a href="?id=appstore_allapps">All Apps</a>
+    </li>
+     <li>
+      <a href="?id=appstore_itsm">ITSM</a>
+    </li>
+    <li>
+      <a  href="?id=appstore_mobileapps" >Mobile Apps<button class="btn btn-danger" href="#">Try it!</button></a>
+    </li>
+    <li>
+      <a href="?id=appstore_marketingapps">Marketing/Promotion</a>
+    </li>
+    <li>
+      <a href="?id=appstore_misrapps">MIS Reporting</a>
+    </li>
+    <li>
+      <a href="?id=appstore_qualityassureapps">Quality Assurance</a>
+    </li>
+    <li>
+      <a  href="?id=appstore_genericapps">Generic Apps</a>
+    </li>
+  </ul>
+</nav>
+]]></template>
+    </sp_header_footer>
+</record_update>
